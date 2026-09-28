@@ -2620,7 +2620,7 @@
             <div class="container">
                 <div class="section-head centered reveal">
                     <div class="section-label">Resolvemos tus dudas</div>
-                    <h2>Preguntas frecuentes</h2>
+                    <h2>Preguntas frecuentes</h2><p class="section-sub">Sobre páginas web, automatización e inteligencia artificial: alcances, inversión y acompañamiento.</p>
                 </div>
                 <div class="max-w-md">
                     <div class="faq-list" id="faqList"></div>
@@ -2669,10 +2669,8 @@
                 <div class="footer-links">
                     <h3>Servicios</h3>
                     <a href="/paginas-web/">Páginas web</a>
-                    <a href="#servicios"><i class="fab fa-whatsapp" style="color:var(--whatsapp); margin-right:6px;"></i>Chatbot WhatsApp</a>
-                    <a href="#servicios"><i class="fab fa-telegram" style="color:var(--telegram); margin-right:6px;"></i>Chatbot Telegram</a>
-                    <a href="#servicios">Automatización de citas</a>
-                    <a href="#servicios">Atención al cliente IA</a>
+                    <a href="#automatizacion">Automatización de procesos</a>
+                    <a href="#inteligencia-artificial">Inteligencia artificial</a>
                 </div>
                 <div class="footer-links">
                     <h3>Empresa</h3>
@@ -2693,7 +2691,7 @@
             </div>
             <div class="footer-bottom">
                 <p>© 2026 Sosializarte — Ciudad de México</p>
-                <p>Web · Automatización · IA · <i class="fab fa-whatsapp" style="color:var(--whatsapp);"></i> WhatsApp · <i class="fab fa-telegram" style="color:var(--telegram);"></i> Telegram</p>
+                <p>Web · Automatización · Inteligencia Artificial</p>
             </div>
         </div>
     </footer>
@@ -2714,20 +2712,72 @@
     <script>
         // ─── FAQ DATA ───
         const faqs = [
-            { emoji: "🌐", q: "¿También hacen páginas web?", a: 'Sí. Creamos páginas para presentar tu negocio y facilitar el contacto, con pruebas documentadas antes de publicar. <a href="/paginas-web/">Conoce el servicio de páginas web</a>.' },
-            { emoji: "🔍", q: "¿Qué significa que prueban mi proyecto?", a: "Revisamos los recorridos incluidos en el alcance y te entregamos un resumen de funciones, dispositivos o navegadores probados, resultados y puntos pendientes." },
-            { emoji: "💬", q: "¿Puedo empezar solo con una web?", a: "Sí. No necesitas contratar automatización o IA. Si después aparece una necesidad, evaluamos su viabilidad y cotizamos la integración por separado." },
-            { emoji: "⚙️", q: "¿Cómo funciona el asistente virtual?", a: "Tus clientes escriben por WhatsApp o Telegram y el sistema responde en segundos. Puede mostrar horarios disponibles, agendar citas, enviar confirmaciones y sincronizar todo con Google Calendar en tiempo real.<br><br>El objetivo es automatizar tareas repetitivas para que tu negocio ahorre tiempo y atienda más rápido." },
-            { emoji: "📲", q: "¿Necesito instalar algo?", a: "No. Nosotros realizamos toda la configuración técnica y dejamos el sistema funcionando. Solo necesitas tu celular, acceso a WhatsApp o Telegram y conexión a internet." },
-            { emoji: "🕒", q: "¿El sistema funciona 24/7?", a: "Sí. El asistente virtual responde mensajes, registra citas y atiende solicitudes incluso fuera de horario laboral. Los 7 días de la semana, las 24 horas." },
-            { emoji: "💰", q: "¿Cuánto cuesta implementar un chatbot?", a: "La implementación inicial comienza desde <strong>$3,000 MXN</strong>, incluyendo:<br>✅ Configuración personalizada<br>✅ Integraciones (Google Calendar + plataforma)<br>✅ Propuesta y diseño conversacional<br>✅ Pruebas y validaciones<br>✅ Puesta en marcha<br><br>Cada proyecto puede requerir cotización específica según sus necesidades." },
-            { emoji: "📆", q: "¿Existe mensualidad para los chatbots?", a: "Sí, desde <strong>$600 MXN mensuales</strong>. Incluye hosting del chatbot, monitoreo, soporte técnico, mantenimiento, actualizaciones y ajustes menores. El precio es por plataforma (WhatsApp o Telegram)." },
-            { emoji: "📞", q: "¿Puedo usar mi número actual de WhatsApp?", a: "Depende del caso. Podemos integrar un número existente o configurar uno exclusivo para automatización. La mejor opción se define durante la evaluación inicial." },
-            { emoji: "👥", q: "¿El sistema reemplaza a mi personal?", a: "No. El objetivo es reducir tareas repetitivas y mejorar tiempos de respuesta. Tu equipo se enfoca en atender mejor a los clientes mientras la automatización maneja procesos operativos." },
-            { emoji: "🤷", q: "¿Qué pasa si el bot no entiende algo?", a: "El sistema puede redirigir la conversación a una persona o solicitar más información. Siempre existe la opción de atención humana como respaldo." },
-            { emoji: "📄", q: "¿Hay contrato forzoso?", a: "No. El servicio es mensual y puedes cancelar cuando lo necesites. Sin penalizaciones, sin preguntas incómodas." },
-            { emoji: "🎓", q: "¿Cuál es tu formación en inteligencia artificial?", a: "Cuento con la certificación <strong>Generative AI Professional (GAIPCM) por Certiprof</strong> y completé el <strong>Diplomado en IA Generativa y Automatización</strong> en Top Learning (112 horas, 2025). Combino 16 años de QA con formación técnica certificada en IA — no improviso." }
-        ];
+          {
+                    "emoji": "💬",
+                    "q": "¿Cómo sé qué servicio necesita mi negocio?",
+                    "a": "Empezamos por lo que quieres resolver: presentar tus servicios, recibir solicitudes, reducir tareas manuales o mejorar la atención. Con esa información proponemos una web, una automatización, una solución con IA o una combinación. No necesitas conocimientos técnicos."
+          },
+          {
+                    "emoji": "🌐",
+                    "q": "¿Qué incluye una página web?",
+                    "a": "Definimos contigo las secciones, el contenido y los canales de contacto. El alcance puede incluir diseño para celular y computadora, WhatsApp, formularios, SEO técnico y medición. La propuesta indica qué incluye el dominio, el hosting, la publicación y sus renovaciones. <a href='/paginas-web/'>Conoce nuestro servicio de páginas web</a>."
+          },
+          {
+                    "emoji": "🧩",
+                    "q": "¿Puedo contratar solo una página web y crecer después?",
+                    "a": "Sí. Cada servicio se puede contratar por separado. Si después necesitas citas, seguimiento de solicitudes o un asistente, revisamos la compatibilidad y cotizamos la integración. Algunas ampliaciones pueden requerir cambios de plataforma o infraestructura."
+          },
+          {
+                    "emoji": "⚙️",
+                    "q": "¿Qué procesos pueden automatizar?",
+                    "a": "Podemos conectar formularios, agendas y herramientas para registrar solicitudes, enviar confirmaciones, recordar citas o dar seguimiento. Primero revisamos cómo trabajas y los accesos e integraciones disponibles; después definimos qué pasos automatizar y cuáles requieren intervención humana."
+          },
+          {
+                    "emoji": "🤖",
+                    "q": "¿Qué hace un chatbot o asistente con IA?",
+                    "a": "Puede responder preguntas con información de tu negocio, orientar sobre servicios y recopilar datos. Agendar citas o consultar información de otros sistemas requiere integraciones específicas. Definimos sus límites, probamos sus respuestas y acordamos cómo solicitar atención humana cuando corresponda."
+          },
+          {
+                    "emoji": "💰",
+                    "q": "¿Cuánto cuesta un proyecto y qué pagos recurrentes tendría?",
+                    "a": "Cotizamos según el alcance, el contenido y las integraciones. Antes de comenzar separamos el desarrollo inicial de los costos recurrentes: dominio, hosting, mantenimiento y, cuando aplique, plataformas, mensajería o consumo de IA. No todos los proyectos requieren la misma mensualidad."
+          },
+          {
+                    "emoji": "🗓️",
+                    "q": "¿Cuánto tarda y qué necesitan de mi parte?",
+                    "a": "El plazo se acuerda después de definir el alcance. Normalmente necesitamos información de tu negocio, servicios, identidad visual, imágenes autorizadas y una persona que revise los avances. Las integraciones también pueden requerir cuentas y permisos. Te indicamos los requisitos antes de empezar."
+          },
+          {
+                    "emoji": "🔍",
+                    "q": "¿Cómo comprueban que mi proyecto funciona?",
+                    "a": "Probamos los recorridos acordados: por ejemplo, consultar servicios y contactar desde una web, registrar una cita o ejecutar un flujo automatizado. Entregamos un resumen de lo revisado, los resultados y los puntos pendientes. En asistentes con IA incluimos preguntas de prueba y situaciones en las que debe pedir ayuda."
+          },
+          {
+                    "emoji": "🔑",
+                    "q": "¿Quién conserva el dominio y los accesos?",
+                    "a": "La propuesta define la titularidad del dominio, las cuentas y los entregables. Para dominios nuevos, proponemos registrarlos a nombre del cliente. Documentamos los accesos que le corresponden y las dependencias de proveedores externos; no todos los servicios permiten transferir sus licencias o infraestructura."
+          },
+          {
+                    "emoji": "🛠️",
+                    "q": "¿Qué pasa después de la entrega?",
+                    "a": "Explicamos el uso de la solución y las opciones de soporte y mantenimiento. La propuesta establece cobertura, horarios, correcciones incluidas y condiciones de cambios o cancelación. Nuevas funciones o integraciones se cotizan aparte. La atención humana no debe confundirse con la disponibilidad automática de una herramienta."
+          },
+          {
+                    "emoji": "📲",
+                    "q": "¿Puedo conservar mi web, mis herramientas o mi WhatsApp actual?",
+                    "a": "Primero revisamos su estado, los accesos y las opciones de integración. Un enlace de contacto a WhatsApp no es lo mismo que automatizar conversaciones. Para un chatbot evaluamos si el número y la configuración actuales son compatibles antes de prometer una migración o conexión."
+          },
+          {
+                    "emoji": "📈",
+                    "q": "¿Una web garantiza ventas o aparecer primero en Google?",
+                    "a": "No podemos garantizar ventas ni una posición en buscadores. Preparamos la base técnica y los canales de contacto incluidos en el proyecto. Los resultados también dependen de tu oferta, el tráfico y la atención a los prospectos. Al medir, distinguimos visitas, clics, solicitudes y ventas."
+          },
+          {
+                    "emoji": "🎓",
+                    "q": "¿Qué experiencia respalda el trabajo?",
+                    "a": "Ronald Zúñiga aporta 16 años de experiencia profesional en QA y pruebas de software, formación en IA generativa y automatización, y certificación de Certiprof. Esa experiencia se aplica al diagnóstico, las pruebas y la documentación de cada proyecto."
+          }
+];
 
         // ─── BUILD FAQ ───
         function buildFAQ() {
