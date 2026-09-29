@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
-    <title>Sosializarte — Automatización con IA para Negocios</title>
+    <title>Sosializarte — Web, Automatización e IA para Negocios</title>
 
-    <meta name="description" content="Automatizamos negocios con inteligencia artificial. Chatbots para WhatsApp y Telegram, automatización de citas, atención al cliente y procesos con IA para consultorios, spas, restaurantes y empresas.">
+    <meta name="description" content="Páginas web, automatización e inteligencia artificial para negocios. Entendemos tus procesos y probamos las soluciones antes de publicarlas.">
     <meta name="keywords" content="automatización con IA, chatbot WhatsApp, chatbot Telegram, inteligencia artificial para negocios, automatización de citas, IA para consultorios, asistentes virtuales, automatización empresarial">
     <meta name="author" content="Sosializarte">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index,follow">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Sosializarte — Automatización con IA para Negocios">
-    <meta property="og:description" content="Automatiza atención a clientes, citas y procesos usando inteligencia artificial en WhatsApp, Telegram y sitios web.">
+    <meta property="og:title" content="Sosializarte — Web, Automatización e IA para Negocios">
+    <meta property="og:description" content="Web, automatización e IA para presentar tu negocio, facilitar el contacto y reducir tareas manuales.">
     <meta property="og:image" content="https://sosializarte.com/hero-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -22,8 +22,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sosializarte — Automatización con IA para Negocios">
-    <meta name="twitter:description" content="Automatiza atención a clientes, citas y procesos usando inteligencia artificial.">
+    <meta name="twitter:title" content="Sosializarte — Web, Automatización e IA para Negocios">
+    <meta name="twitter:description" content="Web, automatización e IA para negocios, con pruebas de calidad antes de publicar.">
     <meta name="twitter:image" content="https://sosializarte.com/hero-image.png">
 
     <link rel="canonical" href="https://sosializarte.com/" />
@@ -98,57 +98,8 @@
         }
     </script>
 
-    <!--
-      ══════════════════════════════════════════════════════════════
-      TODO ANTES DE PUBLICAR: reemplaza GA_MEASUREMENT_ID con tu ID
-      real de Google Analytics 4 (formato G-XXXXXXXXXX).
-      Mientras diga "GA_MEASUREMENT_ID" literal, Analytics NO funciona.
-      ══════════════════════════════════════════════════════════════
-    -->
-    <!-- Google Analytics 4 (con Consent Mode v2: por defecto todo denegado) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        // Consent Mode v2: nada se envía como "granted" hasta que el usuario decida en el banner de cookies.
-        gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied'
-        });
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-
-    <!--
-      ══════════════════════════════════════════════════════════════
-      TODO ANTES DE PUBLICAR: reemplaza YOUR_PIXEL_ID con tu ID real
-      de Meta Pixel. El pixel ya NO se inicializa automáticamente al
-      cargar la página — se activa solo tras aceptar cookies (ver
-      initCookieBanner() más abajo), para cumplir con el consentimiento.
-      ══════════════════════════════════════════════════════════════
-    -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        // NOTA: fbq('init', ...) y fbq('track', 'PageView') se llaman
-        // desde loadMetaPixel(), no aquí, para respetar el consentimiento.
-        window.metaPixelLoaded = false;
-        window.loadMetaPixel = function() {
-            if (window.metaPixelLoaded) return;
-            fbq('init', 'YOUR_PIXEL_ID');
-            fbq('track', 'PageView');
-            window.metaPixelLoaded = true;
-        };
-    </script>
-
+    <!-- GA4 y Meta Pixel desactivados hasta disponer de identificadores reales. GoatCounter conserva la medición existente. -->
+    <script>function gtag(){};function fbq(){};</script>
     <style>
         /* ─── RESET Y BASE ─── */
         *,
@@ -2023,6 +1974,17 @@
         .client-link i {
             font-size: 0.7rem;
         }
+
+        /* Home 2.0: identidad y navegación entre servicios */
+        .home-overview{padding:32px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-card)}
+        .overview-row{display:flex;align-items:center;gap:16px;padding:24px 0;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none}
+        .overview-row>span{color:var(--orange);font-weight:700}.overview-row>div{flex:1}.overview-row h2{font-size:1.45rem}.overview-row p{font-size:.9rem;color:var(--muted);margin-top:6px}
+        .overview-proof{font-size:.9rem;color:var(--muted);margin-top:24px}.service-link{display:inline-block;margin-top:20px;color:var(--orange-dark);font-weight:700;text-decoration:none}
+        section[id],article[id]{scroll-margin-top:100px}a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+        .btn-primary{color:#0d0d0d}.btn-primary:hover{color:#fff}
+        .hero-wrap::before{right:0;max-width:100%}.stat-number{font-size:clamp(1.7rem,3vw,2.8rem)}
+        @media(max-width:600px){.home-overview{padding:22px}.hero-btns .btn{white-space:normal;justify-content:center;text-align:center;max-width:100%}.container{padding-inline:20px}}
+        @media(prefers-color-scheme:dark){.service-link{color:var(--orange)}}
     </style>
     <!-- NOTA: se eliminó <base target="_blank"> — rompía la navegación
          de anclas internas (#servicios, #casos, etc.), abriendo una
@@ -2041,7 +2003,7 @@
             <a href="/" class="logo"><span class="slash">//</span>sosializarte</a>
             <ul class="nav-links">
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#industrias">Industrias</a></li>
+                <li><a href="/paginas-web/">Páginas web</a></li>
                 <li><a href="#proceso">Proceso</a></li>
                 <li><a href="#resultados">Resultados</a></li>
                 <li><a href="#casos">Casos</a></li>
@@ -2057,7 +2019,7 @@
         </div>
         <nav class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="Menú móvil">
             <a href="#servicios">Servicios</a>
-            <a href="#industrias">Industrias</a>
+            <a href="/paginas-web/">Páginas web</a>
             <a href="#proceso">Proceso</a>
             <a href="#resultados">Resultados</a>
             <a href="#casos">Casos</a>
@@ -2074,22 +2036,22 @@
             <div class="container">
                 <div class="hero-wrap">
                     <div class="hero-text">
-                        <div class="label-tag">Automatización con IA · México</div>
+                        <div class="label-tag">Web · Automatización · IA</div>
                         <h1 class="hero-headline">
-                            Tu negocio atendiendo<br>clientes incluso<br><em>mientras duermes.</em>
+                            Tu negocio, mejor conectado.<br><em>Tu trabajo, más simple.</em>
                         </h1>
                         <p class="hero-sub">
-                            Automatizamos negocios que reciben mensajes, agendan citas y atienden clientes todos los días — con asistentes inteligentes para <strong>WhatsApp, Telegram y sitios web</strong>.
+                            Creamos <strong>páginas web, automatizaciones y soluciones con IA</strong> para que tus clientes te conozcan, te contacten y reciban atención. Partimos de tu negocio y probamos cada solución antes de ponerla en marcha.
                         </p>
                         <div class="hero-btns">
-                            <a href="https://wa.me/525540509093?text=Hola%2C%20vi%20su%20sitio%20web%20y%20me%20interesa%20agendar%20una%20asesor%C3%ADa%20para%20automatizar%20mi%20negocio%20con%20IA.%20%C2%BFPodemos%20conversar%3F&utm_source=web&utm_medium=hero_cta&utm_campaign=asesoria_gratuita" target="_blank" rel="noopener noreferrer" class="btn btn-primary" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Hero WhatsApp'}); if(window.fbq) fbq('track', 'Contact');">
+                            <a href="https://wa.me/525540509093?text=Hola%2C%20vi%20su%20sitio%20web%20y%20me%20interesa%20agendar%20una%20asesor%C3%ADa%20para%20mi%20proyecto%20digital.%20%C2%BFPodemos%20conversar%3F&utm_source=web&utm_medium=hero_cta&utm_campaign=asesoria_gratuita" target="_blank" rel="noopener noreferrer" class="btn btn-primary" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Hero WhatsApp'}); if(window.fbq) fbq('track', 'Contact');">
                                 <i class="fab fa-whatsapp"></i> Agendar asesoría gratuita
                             </a>
-                            <a href="#resultados" class="btn btn-ghost">Ver casos reales →</a>
+                            <a href="/paginas-web/" class="btn btn-ghost">Quiero una página web →</a>
                         </div>
                         <div class="social-proof-strip">
                             <div class="proof-avatars">
-                                <span>SM</span><span>GL</span><span>SP</span>
+                                <span>SM</span><span>GL</span>
                             </div>
                             <div class="proof-text">
                                 Proyectos en producción<br>
@@ -2098,30 +2060,12 @@
                         </div>
                     </div>
 
-                    <div class="hero-visual">
-                        <div style="position: relative; max-width: 340px; margin: 0 auto; display: block;">
-                            <div class="floating-badge badge-top">
-                                <span class="badge-dot"></span> Bot activo 24/7
-                            </div>
-                            <div class="hero-phone-mock">
-                                <div class="chat-header">
-                                    <div class="chat-avatar" style="background: #669933;">🖨️</div>
-                                    <div>
-                                        <div class="chat-name">Solid Maker — Asistente</div>
-                                        <div class="chat-status">● En línea ahora</div>
-                                    </div>
-                                </div>
-                                <div class="chat-bubble bubble-bot bubble-delay-1">¡Hola! 👋 Soy el Asesor Técnico de <strong>Solid Maker</strong>. ¿Qué proyecto tienes en mente?</div>
-                                <div class="chat-time bubble-delay-1" style="animation: bubble-in 0.4s 0.3s ease both; opacity:0;">10:23</div>
-                                <div class="chat-bubble bubble-user bubble-delay-2">Quiero cotizar un llavero personalizado</div>
-                                <div class="chat-bubble bubble-bot bubble-delay-3">🎨 ¡Excelente! Tenemos 6 tipos de llaveros: mascotas, autos, empresas, personalizados, con NFC y multicolor. ¿Cuál te interesa?</div>
-                                <div class="chat-bubble bubble-user bubble-delay-4">Mascotas</div>
-                                <div class="chat-bubble bubble-bot bubble-delay-5">🐾 Escaneamos a tu mascota y lo convertimos en un llavero 3D realista. Precio desde $300 MXN. 📱 ¿Te contacto por WhatsApp para cotizar?</div>
-                            </div>
-                            <div class="floating-badge badge-bottom">
-                                ⚡ Cotización en 2 minutos
-                            </div>
-                        </div>
+                    <div class="hero-visual home-overview">
+                        <div class="section-label">Una solución para cada etapa</div>
+                        <a href="/paginas-web/" class="overview-row"><span>01</span><div><h2>Páginas web</h2><p>Presenta tu negocio y facilita el contacto.</p></div><b aria-hidden="true">↗</b></a>
+                        <a href="#automatizacion" class="overview-row"><span>02</span><div><h2>Automatización</h2><p>Conecta herramientas y reduce tareas repetitivas.</p></div><b aria-hidden="true">↓</b></a>
+                        <a href="#inteligencia-artificial" class="overview-row"><span>03</span><div><h2>Inteligencia artificial</h2><p>Asistentes para informar, orientar y apoyar la atención.</p></div><b aria-hidden="true">↓</b></a>
+                        <p class="overview-proof">16 años de experiencia en QA aplicados a tu proyecto.</p>
                     </div>
                 </div>
             </div>
@@ -2131,9 +2075,9 @@
         <div class="ticker-wrap">
             <div class="ticker-track">
                 <div class="ticker-set">
-                    <span class="ticker-item"><i class="fab fa-whatsapp"></i>Chatbot WhatsApp 24/7</span>
+                    <span class="ticker-item"><i class="fab fa-whatsapp"></i>Páginas web para negocios</span>
                     <span class="ticker-dot"></span>
-                    <span class="ticker-item"><i class="fab fa-telegram"></i>Chatbot Telegram</span>
+                    <span class="ticker-item"><i class="fab fa-telegram"></i>Automatización de procesos</span>
                     <span class="ticker-dot"></span>
                     <span class="ticker-item"><i class="fab fa-google" style="color:#4285F4;"></i>Google Calendar integrado</span>
                     <span class="ticker-dot"></span>
@@ -2141,7 +2085,7 @@
                     <span class="ticker-dot"></span>
                     <span class="ticker-item">🦷 Caso: GL Dental</span>
                     <span class="ticker-dot"></span>
-                    <span class="ticker-item">🚀 Implementación en días</span>
+                    <span class="ticker-item">🔍 Pruebas antes de publicar</span>
                     <span class="ticker-dot"></span>
                     <span class="ticker-item">📍 Soporte local CDMX</span>
                     <span class="ticker-dot"></span>
@@ -2149,9 +2093,9 @@
                 <!-- Segundo set duplicado solo para el loop visual del ticker.
                      aria-hidden evita que un lector de pantalla lo anuncie dos veces. -->
                 <div class="ticker-set" aria-hidden="true">
-                    <span class="ticker-item"><i class="fab fa-whatsapp"></i>Chatbot WhatsApp 24/7</span>
+                    <span class="ticker-item"><i class="fab fa-whatsapp"></i>Páginas web para negocios</span>
                     <span class="ticker-dot"></span>
-                    <span class="ticker-item"><i class="fab fa-telegram"></i>Chatbot Telegram</span>
+                    <span class="ticker-item"><i class="fab fa-telegram"></i>Automatización de procesos</span>
                     <span class="ticker-dot"></span>
                     <span class="ticker-item"><i class="fab fa-google" style="color:#4285F4;"></i>Google Calendar integrado</span>
                     <span class="ticker-dot"></span>
@@ -2159,7 +2103,7 @@
                     <span class="ticker-dot"></span>
                     <span class="ticker-item">🦷 Caso: GL Dental</span>
                     <span class="ticker-dot"></span>
-                    <span class="ticker-item">🚀 Implementación en días</span>
+                    <span class="ticker-item">🔍 Pruebas antes de publicar</span>
                     <span class="ticker-dot"></span>
                     <span class="ticker-item">📍 Soporte local CDMX</span>
                     <span class="ticker-dot"></span>
@@ -2167,29 +2111,11 @@
             </div>
         </div>
 
-        <!-- ─── STATS ─── -->
-        <div class="stats-section pt-0">
-            <div class="container">
-                <div class="stat-grid reveal">
-                    <div class="stat-cell">
-                        <div class="stat-number" id="counter-90">90.2%</div>
-                        <div class="stat-label">Reducción de tiempo operativo</div>
-                        <div class="stat-sublabel">De 4.75 horas → 28 minutos semanales</div>
-                    </div>
-                    <div class="stat-cell">
-                        <div class="stat-number">0%</div>
-                        <div class="stat-label">Tasa de error en datos de contacto</div>
-                        <div class="stat-sublabel">Cero errores desde la implementación</div>
-                    </div>
-                    <div class="stat-cell">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Disponibilidad del asistente</div>
-                        <div class="stat-sublabel">Sin días libres ni vacaciones</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <div class="stats-section pt-0"><div class="container"><div class="stat-grid">
+        <div class="stat-cell"><div class="stat-number">Negocio</div><div class="stat-label">Entendemos lo que necesitas resolver</div></div>
+        <div class="stat-cell"><div class="stat-number">Calidad</div><div class="stat-label">Probamos y documentamos resultados</div></div>
+        <div class="stat-cell"><div class="stat-number">Claridad</div><div class="stat-label">Definimos alcance, costos y soporte</div></div>
+        </div></div></div>
         <!-- ─── TECH ─── -->
         <div class="tech-band">
             <div class="container">
@@ -2207,61 +2133,22 @@
             </div>
         </div>
 
-        <!-- ─── SERVICIOS ─── -->
-        <section id="servicios">
-            <div class="container">
-                <div class="section-head reveal">
-                    <div class="section-label">Lo que hacemos</div>
-                    <h2>Servicios de automatización</h2>
-                    <p class="section-sub">Soluciones diseñadas para resolver procesos reales de negocio usando inteligencia artificial.</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card reveal">
-                        <div class="service-icon-wrap"><i class="fab fa-whatsapp"></i></div>
-                        <h3>Chatbot para WhatsApp</h3>
-                        <p>Bots inteligentes que atienden clientes, responden preguntas y cierran ventas en WhatsApp sin que estés presente.</p>
-                    </div>
-                    <div class="service-card reveal reveal-delay-1">
-                        <div class="service-icon-wrap"><i class="fab fa-telegram"></i></div>
-                        <h3>Chatbot para Telegram</h3>
-                        <p>Asistentes virtuales para atención automatizada, soporte y ventas dentro de Telegram.</p>
-                    </div>
-                    <div class="service-card reveal reveal-delay-2">
-                        <div class="service-icon-wrap" style="font-size:1.4rem;">📅</div>
-                        <h3>Automatización de citas</h3>
-                        <p>Agenda automática sincronizada con Google Calendar. Tu cliente elige horario y queda confirmado al instante.</p>
-                    </div>
-                    <div class="service-card reveal">
-                        <div class="service-icon-wrap" style="font-size:1.4rem;">⚡</div>
-                        <h3>Procesos automatizados</h3>
-                        <p>Eliminamos tareas repetitivas: confirmaciones, recordatorios, seguimientos y formularios en piloto automático.</p>
-                    </div>
-                    <div class="service-card reveal reveal-delay-1">
-                        <div class="service-icon-wrap" style="font-size:1.4rem;">📲</div>
-                        <h3>Atención al cliente con IA</h3>
-                        <p>Respuestas automáticas, seguimiento inteligente y escalado a humano cuando se necesita.</p>
-                    </div>
-                    <div class="service-card reveal reveal-delay-2">
-                        <div class="service-icon-wrap" style="font-size:1.4rem;">📈</div>
-                        <h3>Automatización de marketing</h3>
-                        <p>Flujos automáticos para captar prospectos, nutrir leads y convertir oportunidades sin intervención manual.</p>
-                    </div>
-                </div>
-                <div class="mid-cta reveal">
-                    <p>¿Listo para dejar de responder mensajes manualmente?</p>
-                    <a href="https://wa.me/525540509093?text=Hola%2C%20me%20interesa%20automatizar%20mi%20negocio.%20%C2%BFPodemos%20conversar%3F&utm_source=web&utm_medium=services_cta&utm_campaign=automatizar" target="_blank" rel="noopener noreferrer" class="btn btn-primary" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Services WhatsApp'}); if(window.fbq) fbq('track', 'Contact');">
-                        <i class="fab fa-whatsapp"></i> Quiero automatizar mi negocio
-                    </a>
-                </div>
-            </div>
-        </section>
+        <section id="servicios"><div class="container">
+        <div class="section-head"><div class="section-label">Lo que hacemos</div><h2>Tres formas de impulsar tu negocio.</h2><p class="section-sub">Podemos empezar por una web y evolucionar conforme aparezcan nuevas necesidades.</p></div>
+        <div class="services-grid">
+        <article class="service-card"><div class="service-icon-wrap"><i class="fas fa-laptop-code" aria-hidden="true"></i></div><h3>Páginas web</h3><p>Una presencia profesional con información clara y canales de contacto probados. Diseño para celular, SEO técnico y medición según el alcance.</p><a class="service-link" href="/paginas-web/">Conocer el servicio de páginas web →</a></article>
+        <article class="service-card" id="automatizacion"><div class="service-icon-wrap"><i class="fas fa-gears" aria-hidden="true"></i></div><h3>Automatización</h3><p>Conectamos formularios, agendas y herramientas para reducir tareas manuales: citas, confirmaciones, recordatorios y seguimiento de solicitudes.</p><a class="service-link" href="https://wa.me/525540509093?text=Hola%2C%20quiero%20revisar%20qu%C3%A9%20procesos%20puedo%20automatizar%20en%20mi%20negocio.">Platicar sobre mis procesos →</a></article>
+        <article class="service-card" id="inteligencia-artificial"><div class="service-icon-wrap"><i class="fas fa-robot" aria-hidden="true"></i></div><h3>Inteligencia artificial</h3><p>Chatbots y asistentes que responden con información de tu negocio. Definimos sus límites y cuándo debe intervenir una persona.</p><a class="service-link" href="https://wa.me/525540509093?text=Hola%2C%20quiero%20saber%20c%C3%B3mo%20aplicar%20IA%20en%20mi%20negocio.">Explorar una solución con IA →</a></article>
+        </div>
+        <div class="mid-cta"><p>No necesitas llegar con una solución técnica. Cuéntanos qué quieres mejorar.</p><a href="#contacto-form" class="btn btn-primary">Platicar mi proyecto →</a></div>
+        </div></section>
 
         <!-- ─── INDUSTRIAS ─── -->
         <section id="industrias" class="industries-bg" style="padding: 80px 0;">
             <div class="container">
                 <div class="section-head reveal">
                     <div class="section-label">¿Para quién es esto?</div>
-                    <h2>Negocios que ya pueden automatizarse</h2>
+                    <h2>Soluciones que se adaptan a tu actividad</h2>
                     <p class="section-sub">Cualquier negocio que reciba mensajes repetitivos o gestione citas constantemente es candidato ideal.</p>
                 </div>
                 <div class="industries-grid">
@@ -2307,32 +2194,32 @@
                 <div class="section-head centered reveal">
                     <div class="section-label">Sin sorpresas</div>
                     <h2>Cómo trabajamos</h2>
-                    <p class="section-sub">Un proceso claro, desde el primer contacto hasta el bot funcionando en tu negocio.</p>
+                    <p class="section-sub">Un proceso claro, desde entender tu necesidad hasta probar y poner en marcha la solución.</p>
                 </div>
                 <div class="proceso-grid">
                     <div class="proceso-step reveal">
                         <div class="step-number">01</div>
                         <div class="step-icon"><i class="fas fa-search"></i></div>
                         <h3>Diagnóstico</h3>
-                        <p>Entendemos tu negocio, los mensajes que recibes y los procesos que quieres automatizar. Sin compromisos.</p>
+                        <p>Entendemos tus clientes, tu forma de trabajar y el problema que quieres resolver.</p>
                     </div>
                     <div class="proceso-step reveal reveal-delay-1">
                         <div class="step-number">02</div>
                         <div class="step-icon"><i class="fas fa-sitemap"></i></div>
-                        <h3>Diseño del flujo</h3>
-                        <p>Mapeamos la conversación ideal de tu bot: bienvenida, opciones, captura de datos y confirmaciones.</p>
+                        <h3>Propuesta y diseño</h3>
+                        <p>Definimos la solución, el alcance, los tiempos y los costos antes de desarrollar.</p>
                     </div>
                     <div class="proceso-step reveal reveal-delay-2">
                         <div class="step-number">03</div>
                         <div class="step-icon"><i class="fas fa-code"></i></div>
                         <h3>Implementación</h3>
-                        <p>Configuramos el bot, conectamos WhatsApp o Telegram y lo integramos con tu Google Calendar.</p>
+                        <p>Construimos la web o integración acordada y validamos sus recorridos principales.</p>
                     </div>
                     <div class="proceso-step reveal reveal-delay-3">
                         <div class="step-number">04</div>
                         <div class="step-icon"><i class="fas fa-rocket"></i></div>
                         <h3>Lanzamiento</h3>
-                        <p>Pruebas, ajustes finales y puesta en marcha. Tu negocio empieza a atender solo desde el primer día.</p>
+                        <p>Documentamos las pruebas, corregimos hallazgos y publicamos con tu aprobación.</p>
                     </div>
                 </div>
             </div>
@@ -2343,7 +2230,7 @@
             <div class="container">
                 <div class="section-head reveal">
                     <div class="section-label">Resultados con cronómetro</div>
-                    <h2>Casos reales, números reales</h2>
+                    <h2>Resultados de proyectos de automatización</h2>
                     <p class="section-sub">Dos negocios, dos industrias, un mismo resultado: automatización que funciona.</p>
                 </div>
 
@@ -2576,7 +2463,7 @@
                              loading="lazy"
                              onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22><rect width=%22180%22 height=%22180%22 fill=%22%23FF642E%22/><text x=%2290%22 y=%2295%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-family=%22sans-serif%22>RZ</text></svg>'">
                         <div class="founder-name">Ronald Zúñiga</div>
-                        <div class="founder-role">Fundador · Consultor de Automatización IA</div>
+                        <div class="founder-role">Fundador · Web, Automatización e IA</div>
                         <div class="cred-pills">
                             <span class="cred-pill">🎓 Generative AI Professional (Certiprof)</span>
                             <span class="cred-pill">📋 Diplomado IA · 112 hrs</span>
@@ -2584,11 +2471,11 @@
                         </div>
                     </div>
                     <div class="founder-text reveal reveal-delay-1">
-                        <div class="section-label">¿Quién construye tus automatizaciones?</div>
-                        <h2 style="margin-bottom: 1.5rem;">No vendemos humo.<br>Construimos sistemas.</h2>
-                        <p><strong>En Sosializarte no vendemos automatizaciones genéricas.</strong> Diseñamos soluciones que resuelven procesos reales, validadas en producción antes de entregarse.</p>
-                        <p>Mi experiencia no viene de vender IA. Viene de más de 16 años optimizando procesos, encontrando errores antes de que lleguen al cliente y construyendo sistemas que realmente funcionan. QA aplicado a la automatización.</p>
-                        <p>Combiné esa base con certificación oficial en <strong>Generative AI Professional (Certiprof)</strong> y el <strong>Diplomado en IA Generativa y Automatización</strong> (112 horas, 2025) para ofrecer algo distinto: automatización con criterio de calidad.</p>
+                        <div class="section-label">¿Quién está detrás de tu proyecto?</div>
+                        <h2 style="margin-bottom: 1.5rem;">No solo desarrollamos.<br>Probamos.</h2>
+                        <p><strong>La calidad forma parte de la entrega.</strong> Entendemos tu negocio, probamos los recorridos acordados y documentamos lo validado antes de publicar.</p>
+                        <p>Mi experiencia no viene de vender IA. Viene de más de 16 años optimizando procesos, encontrando errores antes de que lleguen al cliente y construyendo sistemas que realmente funcionan. QA aplicado a páginas web, automatización e IA.</p>
+                        <p>Combiné esa base con certificación oficial en <strong>Generative AI Professional (Certiprof)</strong> y el <strong>Diplomado en IA Generativa y Automatización</strong> (112 horas, 2025) para ofrecer algo distinto: soluciones digitales con criterio de calidad.</p>
                         <div class="founder-stats">
                             <div class="founder-stat">
                                 <div class="founder-stat-num">+16</div>
@@ -2599,8 +2486,8 @@
                                 <div class="founder-stat-label">soporte local</div>
                             </div>
                             <div class="founder-stat">
-                                <div class="founder-stat-num">24/7</div>
-                                <div class="founder-stat-label">disponibilidad</div>
+                                <div class="founder-stat-num">QA</div>
+                                <div class="founder-stat-label">pruebas documentadas</div>
                             </div>
                         </div>
                     </div>
@@ -2614,13 +2501,13 @@
                 <div class="form-wrap">
                     <div class="form-copy reveal">
                         <div class="section-label">Empieza hoy</div>
-                        <h2>¿Tu negocio listo para trabajar solo?</h2>
-                        <p>Una asesoría sin costo para evaluar si la automatización tiene sentido para tu negocio. Sin compromisos. Sin jerga técnica.</p>
+                        <h2>¿Qué quieres mejorar en tu negocio?</h2>
+                        <p>Una conversación para definir si necesitas una web, automatizar un proceso o incorporar IA. Con palabras claras y una propuesta acorde a tu necesidad.</p>
                         <ul class="form-benefits">
                             <li>Respuesta en menos de 24 horas</li>
-                            <li>Implementación desde $3,000 MXN</li>
-                            <li>Sin contrato forzoso</li>
-                            <li>Soporte técnico incluido</li>
+                            <li>Alcance y cotización por proyecto</li>
+                            <li>Pruebas antes de publicar</li>
+                            <li>Opciones de soporte y mantenimiento</li>
                         </ul>
                     </div>
                     <div class="lead-form reveal reveal-delay-1">
@@ -2647,6 +2534,8 @@
                                 <div class="field">
                                     <select name="interes" aria-label="¿Qué te interesa?">
                                         <option value="">¿Qué te interesa?</option>
+                                        <option>Página web para mi negocio</option>
+                                        <option>Automatización de procesos</option>
                                         <option>Chatbot para WhatsApp</option>
                                         <option>Chatbot para Telegram</option>
                                         <option>Automatización de citas</option>
@@ -2682,14 +2571,14 @@
             <div class="container">
                 <div class="section-head centered reveal">
                     <div class="section-label">Resolvemos tus dudas</div>
-                    <h2>Preguntas frecuentes</h2>
+                    <h2>Preguntas frecuentes</h2><p class="section-sub">Sobre páginas web, automatización e inteligencia artificial: alcances, inversión y acompañamiento.</p>
                 </div>
                 <div class="max-w-md">
                     <div class="faq-list" id="faqList"></div>
                 </div>
                 <div style="text-align: center; margin-top: 3rem;">
                     <p style="color: var(--muted); margin-bottom: 1.5rem;">¿Tienes una pregunta que no está aquí?</p>
-                    <a href="https://wa.me/525540509093?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20sus%20servicios%20de%20automatizaci%C3%B3n.&utm_source=web&utm_medium=faq_cta&utm_campaign=pregunta" 
+                    <a href="https://wa.me/525540509093?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20sus%20servicios.&utm_source=web&utm_medium=faq_cta&utm_campaign=pregunta" 
                        target="_blank" rel="noopener noreferrer"
                        class="btn btn-primary"
                        onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'FAQ WhatsApp'}); if(window.fbq) fbq('track', 'Contact');">
@@ -2702,10 +2591,10 @@
         <!-- ─── CTA FINAL ─── -->
         <section class="cta-section" id="contacto">
             <div class="container">
-                <h2>Tu negocio puede trabajar solo.</h2>
-                <p>Agenda una llamada sin costo y en 30 minutos sabemos si la automatización tiene sentido para ti.</p>
+                <h2>Demos el siguiente paso para tu negocio.</h2>
+                <p>Cuéntanos qué haces y qué necesitas mejorar. Definimos contigo por dónde empezar.</p>
                 <div class="cta-btns">
-                    <a href="https://wa.me/525540509093?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20sitio%20web%20y%20estoy%20interesado%20en%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20automatizaci%C3%B3n%20con%20IA.%20%C2%BFPodemos%20conversar%3F&utm_source=web&utm_medium=final_cta&utm_campaign=whatsapp" 
+                    <a href="https://wa.me/525540509093?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20sitio%20web%20y%20estoy%20interesado%20en%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20web%2C%20automatizaci%C3%B3n%20e%20IA.%20%C2%BFPodemos%20conversar%3F&utm_source=web&utm_medium=final_cta&utm_campaign=whatsapp" 
                        target="_blank" rel="noopener noreferrer"
                        class="btn btn-white"
                        onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Final WhatsApp'}); if(window.fbq) fbq('track', 'Contact');">
@@ -2726,14 +2615,13 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="/" class="logo"><span class="slash">//</span>sosializarte</a>
-                    <p>Automatización con IA para negocios en México. WhatsApp · Telegram · Google Calendar.</p>
+                    <p>Web, automatización e inteligencia artificial para negocios en México.</p>
                 </div>
                 <div class="footer-links">
                     <h3>Servicios</h3>
-                    <a href="#servicios"><i class="fab fa-whatsapp" style="color:var(--whatsapp); margin-right:6px;"></i>Chatbot WhatsApp</a>
-                    <a href="#servicios"><i class="fab fa-telegram" style="color:var(--telegram); margin-right:6px;"></i>Chatbot Telegram</a>
-                    <a href="#servicios">Automatización de citas</a>
-                    <a href="#servicios">Atención al cliente IA</a>
+                    <a href="/paginas-web/">Páginas web</a>
+                    <a href="#automatizacion">Automatización de procesos</a>
+                    <a href="#inteligencia-artificial">Inteligencia artificial</a>
                 </div>
                 <div class="footer-links">
                     <h3>Empresa</h3>
@@ -2754,7 +2642,7 @@
             </div>
             <div class="footer-bottom">
                 <p>© 2026 Sosializarte — Ciudad de México</p>
-                <p>Automatización con IA · Chatbots · <i class="fab fa-whatsapp" style="color:var(--whatsapp);"></i> WhatsApp · <i class="fab fa-telegram" style="color:var(--telegram);"></i> Telegram</p>
+                <p>Web · Automatización · Inteligencia Artificial</p>
             </div>
         </div>
     </footer>
@@ -2775,17 +2663,72 @@
     <script>
         // ─── FAQ DATA ───
         const faqs = [
-            { emoji: "⚙️", q: "¿Cómo funciona el asistente virtual?", a: "Tus clientes escriben por WhatsApp o Telegram y el sistema responde en segundos. Puede mostrar horarios disponibles, agendar citas, enviar confirmaciones y sincronizar todo con Google Calendar en tiempo real.<br><br>El objetivo es automatizar tareas repetitivas para que tu negocio ahorre tiempo y atienda más rápido." },
-            { emoji: "📲", q: "¿Necesito instalar algo?", a: "No. Nosotros realizamos toda la configuración técnica y dejamos el sistema funcionando. Solo necesitas tu celular, acceso a WhatsApp o Telegram y conexión a internet." },
-            { emoji: "🕒", q: "¿El sistema funciona 24/7?", a: "Sí. El asistente virtual responde mensajes, registra citas y atiende solicitudes incluso fuera de horario laboral. Los 7 días de la semana, las 24 horas." },
-            { emoji: "💰", q: "¿Cuánto cuesta la implementación?", a: "La implementación inicial comienza desde <strong>$3,000 MXN</strong>, incluyendo:<br>✅ Configuración personalizada<br>✅ Integraciones (Google Calendar + plataforma)<br>✅ Diseño del flujo conversacional<br>✅ Pruebas y validaciones<br>✅ Puesta en marcha<br><br>Cada proyecto puede requerir cotización específica según sus necesidades." },
-            { emoji: "📆", q: "¿Existe mensualidad?", a: "Sí, desde <strong>$600 MXN mensuales</strong>. Incluye hosting del chatbot, monitoreo, soporte técnico, mantenimiento, actualizaciones y ajustes menores. El precio es por plataforma (WhatsApp o Telegram)." },
-            { emoji: "📞", q: "¿Puedo usar mi número actual de WhatsApp?", a: "Depende del caso. Podemos integrar un número existente o configurar uno exclusivo para automatización. La mejor opción se define durante la evaluación inicial." },
-            { emoji: "👥", q: "¿El sistema reemplaza a mi personal?", a: "No. El objetivo es reducir tareas repetitivas y mejorar tiempos de respuesta. Tu equipo se enfoca en atender mejor a los clientes mientras la automatización maneja procesos operativos." },
-            { emoji: "🤷", q: "¿Qué pasa si el bot no entiende algo?", a: "El sistema puede redirigir la conversación a una persona o solicitar más información. Siempre existe la opción de atención humana como respaldo." },
-            { emoji: "📄", q: "¿Hay contrato forzoso?", a: "No. El servicio es mensual y puedes cancelar cuando lo necesites. Sin penalizaciones, sin preguntas incómodas." },
-            { emoji: "🎓", q: "¿Cuál es tu formación en inteligencia artificial?", a: "Cuento con la certificación <strong>Generative AI Professional (GAIPCM) por Certiprof</strong> y completé el <strong>Diplomado en IA Generativa y Automatización</strong> en Top Learning (112 horas, 2025). Combino 16 años de QA con formación técnica certificada en IA — no improviso." }
-        ];
+          {
+                    "emoji": "💬",
+                    "q": "¿Cómo sé qué servicio necesita mi negocio?",
+                    "a": "Empezamos por lo que quieres resolver: presentar tus servicios, recibir solicitudes, reducir tareas manuales o mejorar la atención. Con esa información proponemos una web, una automatización, una solución con IA o una combinación. No necesitas conocimientos técnicos."
+          },
+          {
+                    "emoji": "🌐",
+                    "q": "¿Qué incluye una página web?",
+                    "a": "Definimos contigo las secciones, el contenido y los canales de contacto. El alcance puede incluir diseño para celular y computadora, WhatsApp, formularios, SEO técnico y medición. La propuesta indica qué incluye el dominio, el hosting, la publicación y sus renovaciones. <a href='/paginas-web/'>Conoce nuestro servicio de páginas web</a>."
+          },
+          {
+                    "emoji": "🧩",
+                    "q": "¿Puedo contratar solo una página web y crecer después?",
+                    "a": "Sí. Cada servicio se puede contratar por separado. Si después necesitas citas, seguimiento de solicitudes o un asistente, revisamos la compatibilidad y cotizamos la integración. Algunas ampliaciones pueden requerir cambios de plataforma o infraestructura."
+          },
+          {
+                    "emoji": "⚙️",
+                    "q": "¿Qué procesos pueden automatizar?",
+                    "a": "Podemos conectar formularios, agendas y herramientas para registrar solicitudes, enviar confirmaciones, recordar citas o dar seguimiento. Primero revisamos cómo trabajas y los accesos e integraciones disponibles; después definimos qué pasos automatizar y cuáles requieren intervención humana."
+          },
+          {
+                    "emoji": "🤖",
+                    "q": "¿Qué hace un chatbot o asistente con IA?",
+                    "a": "Puede responder preguntas con información de tu negocio, orientar sobre servicios y recopilar datos. Agendar citas o consultar información de otros sistemas requiere integraciones específicas. Definimos sus límites, probamos sus respuestas y acordamos cómo solicitar atención humana cuando corresponda."
+          },
+          {
+                    "emoji": "💰",
+                    "q": "¿Cuánto cuesta un proyecto y qué pagos recurrentes tendría?",
+                    "a": "Cotizamos según el alcance, el contenido y las integraciones. Antes de comenzar separamos el desarrollo inicial de los costos recurrentes: dominio, hosting, mantenimiento y, cuando aplique, plataformas, mensajería o consumo de IA. No todos los proyectos requieren la misma mensualidad."
+          },
+          {
+                    "emoji": "🗓️",
+                    "q": "¿Cuánto tarda y qué necesitan de mi parte?",
+                    "a": "El plazo se acuerda después de definir el alcance. Normalmente necesitamos información de tu negocio, servicios, identidad visual, imágenes autorizadas y una persona que revise los avances. Las integraciones también pueden requerir cuentas y permisos. Te indicamos los requisitos antes de empezar."
+          },
+          {
+                    "emoji": "🔍",
+                    "q": "¿Cómo comprueban que mi proyecto funciona?",
+                    "a": "Probamos los recorridos acordados: por ejemplo, consultar servicios y contactar desde una web, registrar una cita o ejecutar un flujo automatizado. Entregamos un resumen de lo revisado, los resultados y los puntos pendientes. En asistentes con IA incluimos preguntas de prueba y situaciones en las que debe pedir ayuda."
+          },
+          {
+                    "emoji": "🔑",
+                    "q": "¿Quién conserva el dominio y los accesos?",
+                    "a": "La propuesta define la titularidad del dominio, las cuentas y los entregables. Para dominios nuevos, proponemos registrarlos a nombre del cliente. Documentamos los accesos que le corresponden y las dependencias de proveedores externos; no todos los servicios permiten transferir sus licencias o infraestructura."
+          },
+          {
+                    "emoji": "🛠️",
+                    "q": "¿Qué pasa después de la entrega?",
+                    "a": "Explicamos el uso de la solución y las opciones de soporte y mantenimiento. La propuesta establece cobertura, horarios, correcciones incluidas y condiciones de cambios o cancelación. Nuevas funciones o integraciones se cotizan aparte. La atención humana no debe confundirse con la disponibilidad automática de una herramienta."
+          },
+          {
+                    "emoji": "📲",
+                    "q": "¿Puedo conservar mi web, mis herramientas o mi WhatsApp actual?",
+                    "a": "Primero revisamos su estado, los accesos y las opciones de integración. Un enlace de contacto a WhatsApp no es lo mismo que automatizar conversaciones. Para un chatbot evaluamos si el número y la configuración actuales son compatibles antes de prometer una migración o conexión."
+          },
+          {
+                    "emoji": "📈",
+                    "q": "¿Una web garantiza ventas o aparecer primero en Google?",
+                    "a": "No podemos garantizar ventas ni una posición en buscadores. Preparamos la base técnica y los canales de contacto incluidos en el proyecto. Los resultados también dependen de tu oferta, el tráfico y la atención a los prospectos. Al medir, distinguimos visitas, clics, solicitudes y ventas."
+          },
+          {
+                    "emoji": "🎓",
+                    "q": "¿Qué experiencia respalda el trabajo?",
+                    "a": "Ronald Zúñiga aporta 16 años de experiencia profesional en QA y pruebas de software, formación en IA generativa y automatización, y certificación de Certiprof. Esa experiencia se aplica al diagnóstico, las pruebas y la documentación de cada proyecto."
+          }
+];
 
         // ─── BUILD FAQ ───
         function buildFAQ() {
@@ -3022,3 +2965,4 @@
 
 </body>
 </html>
+
