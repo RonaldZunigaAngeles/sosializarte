@@ -8,7 +8,7 @@
     <meta name="description" content="Páginas web, automatización e inteligencia artificial para negocios. Entendemos tus procesos y probamos las soluciones antes de publicarlas.">
     <meta name="keywords" content="automatización con IA, chatbot WhatsApp, chatbot Telegram, inteligencia artificial para negocios, automatización de citas, IA para consultorios, asistentes virtuales, automatización empresarial">
     <meta name="author" content="Sosializarte">
-    <meta name="robots" content="noindex,nofollow">
+    <meta name="robots" content="index,follow">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Sosializarte — Web, Automatización e IA para Negocios">
@@ -98,57 +98,8 @@
         }
     </script>
 
-    <!--
-      ══════════════════════════════════════════════════════════════
-      TODO ANTES DE PUBLICAR: reemplaza GA_MEASUREMENT_ID con tu ID
-      real de Google Analytics 4 (formato G-XXXXXXXXXX).
-      Mientras diga "GA_MEASUREMENT_ID" literal, Analytics NO funciona.
-      ══════════════════════════════════════════════════════════════
-    -->
-    <!-- Google Analytics 4 (con Consent Mode v2: por defecto todo denegado) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        // Consent Mode v2: nada se envía como "granted" hasta que el usuario decida en el banner de cookies.
-        gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied'
-        });
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-
-    <!--
-      ══════════════════════════════════════════════════════════════
-      TODO ANTES DE PUBLICAR: reemplaza YOUR_PIXEL_ID con tu ID real
-      de Meta Pixel. El pixel ya NO se inicializa automáticamente al
-      cargar la página — se activa solo tras aceptar cookies (ver
-      initCookieBanner() más abajo), para cumplir con el consentimiento.
-      ══════════════════════════════════════════════════════════════
-    -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        // NOTA: fbq('init', ...) y fbq('track', 'PageView') se llaman
-        // desde loadMetaPixel(), no aquí, para respetar el consentimiento.
-        window.metaPixelLoaded = false;
-        window.loadMetaPixel = function() {
-            if (window.metaPixelLoaded) return;
-            fbq('init', 'YOUR_PIXEL_ID');
-            fbq('track', 'PageView');
-            window.metaPixelLoaded = true;
-        };
-    </script>
-
+    <!-- GA4 y Meta Pixel desactivados hasta disponer de identificadores reales. GoatCounter conserva la medición existente. -->
+    <script>function gtag(){};function fbq(){};</script>
     <style>
         /* ─── RESET Y BASE ─── */
         *,
