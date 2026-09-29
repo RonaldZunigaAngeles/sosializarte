@@ -1,114 +1,84 @@
-# SOSIALIZARTE
+# Sosializarte
 
-> Soluciones digitales, automatización e inteligencia artificial para transformar procesos y crear experiencias más eficientes.
+**Web, automatización e inteligencia artificial para negocios.**
 
-## Descripción
+Sosializarte ayuda a negocios y profesionistas a construir una presencia digital útil, simplificar procesos y aplicar IA cuando existe un caso de uso claro. Una página web puede ser el punto de partida y crecer después con formularios, WhatsApp, agenda, integraciones y asistentes.
 
-**SOSIALIZARTE** es un proyecto de consultoría y desarrollo digital enfocado en ayudar a negocios, profesionistas y emprendimientos a mejorar su presencia digital y optimizar procesos mediante soluciones prácticas, automatización e inteligencia artificial.
+Sitio: [sosializarte.com](https://sosializarte.com/)
 
-El proyecto funciona también como portafolio de implementaciones reales y demostraciones orientadas a resolver necesidades concretas de negocio.
+## Qué ofrecemos
 
-## Objetivo
+- **Páginas web:** presencia profesional, experiencia adaptable a móvil, canales de contacto, SEO técnico básico y analítica.
+- **Automatización:** procesos, formularios, citas, WhatsApp e integraciones entre herramientas según el alcance de cada proyecto.
+- **Inteligencia artificial:** chatbots y asistentes orientados a tareas concretas, cuando aportan valor al negocio.
 
-Crear soluciones digitales accesibles y funcionales que permitan a pequeños negocios y profesionistas:
+No hay precios fijos publicados en el sitio. Cada propuesta se define por objetivos y alcance.
 
-- Profesionalizar su presencia en Internet.
-- Simplificar tareas repetitivas.
-- Facilitar el contacto y la captación de prospectos.
-- Integrar formularios, WhatsApp y otros canales digitales.
-- Explorar automatización e inteligencia artificial de manera gradual y con una necesidad de negocio clara.
+## Cómo trabajamos
 
-## Soluciones
+Primero entendemos el negocio y la forma en que sus clientes lo contactan. Después proponemos, desarrollamos, **probamos antes de publicar** y acompañamos la evolución acordada. La experiencia de más de 16 años en pruebas de software respalda la atención a navegación, enlaces, formularios, dispositivos, contenido y funcionamiento del recorrido de contacto.
 
-Dependiendo de cada proyecto, SOSIALIZARTE puede integrar:
+El portafolio de la landing muestra [Solid Maker](https://solidmaker.mx/) y [Chilangos RC](https://chilangosrc.com/) como ejemplos de presencia web y de una web que evolucionó hacia un portal.
 
-- Sitios web y landing pages responsivas.
-- Formularios de contacto y cotización.
-- Integración y redirección a WhatsApp.
-- Tarjetas digitales y códigos QR.
-- Automatización de procesos.
-- Chatbots y asistentes con IA cuando el volumen y caso de uso lo justifican.
-- Integraciones entre herramientas y servicios digitales.
-- Prototipos y demostraciones funcionales para nuevos negocios.
+## Estructura del sitio
 
-## Casos y proyectos
+| Ruta | Propósito |
+| --- | --- |
+| [`/`](https://sosializarte.com/) | Home general: Web, Automatización e IA. |
+| [`/paginas-web/`](https://sosializarte.com/paginas-web/) | Landing especializada en páginas web y el proceso de QA. |
+| `/privacidad` | Aviso de privacidad. |
+| `/sitemap.xml` | Sitemap con la Home y Páginas Web. |
 
-El portafolio contempla proyectos orientados a diferentes necesidades, entre ellos automatización de procesos, presencia web y experiencias digitales para pequeños negocios.
+La Home incluye un **demo de agenda de citas**. Su función es mostrar ese caso de uso, no atender como asistente general de ventas de todo el sitio.
 
-Cada implementación busca partir del problema real del cliente y evitar agregar tecnología que no genere un beneficio concreto.
+## Código y publicación
 
-## Tecnologías
+El sitio es estático y utiliza HTML, CSS y JavaScript. Se publica en **GitHub Pages** con el dominio configurado en `CNAME`.
 
-La tecnología utilizada puede variar según el proyecto. El sitio y las soluciones desarrolladas pueden incorporar, entre otras:
+- Repositorio: [RonaldZunigaAngeles/sosializarte](https://github.com/RonaldZunigaAngeles/sosializarte)
+- Rama de producción: `main`
+- Home: `index.html`
+- Landing web: `paginas-web/index.html`
+- Sitemap: `sitemap.xml`
 
-- HTML5
-- CSS3
-- JavaScript
-- GitHub
-- GitHub Pages
-- APIs e integraciones web
-- Herramientas de automatización
-- Servicios de inteligencia artificial
+La rama `feature/sosializarte-2.0` se utilizó para desarrollar y revisar la versión 2.0 antes de integrarla a producción. Para futuros cambios conviene partir de la versión actual de `main`.
 
-## Sitio oficial
+Para revisar el sitio localmente desde la raíz del repositorio:
 
-- https://sosializarte.com
+```bash
+python3 -m http.server 8000
+```
 
-El dominio personalizado apunta al sitio publicado mediante GitHub Pages.
+Abrir `http://localhost:8000/` y `http://localhost:8000/paginas-web/`. La vista local permite revisar el diseño y la navegación; los servicios externos dependen de la conexión y su configuración.
 
-## Repositorio
+## Contacto y medición
 
-- https://github.com/RonaldZunigaAngeles/sosializarte
+La Home tiene un formulario de contacto que envía mediante Formspree. El mensaje de éxito aparece cuando el servicio confirma el envío. También hay enlaces a WhatsApp en ambas páginas.
 
-El repositorio conserva el código fuente y permite mantener historial de versiones mediante Git.
+**GoatCounter** mide las visitas a la Home y a Páginas Web. Además, el sitio envía estos eventos:
 
-## Publicación y dominio
+| Evento | Cuándo se registra |
+| --- | --- |
+| `contacto-whatsapp-home` | Clic en un enlace de WhatsApp de la Home. |
+| `contacto-whatsapp-paginas-web` | Clic en un enlace de WhatsApp de la landing. |
+| `contacto-formulario-home` | Formspree confirmó un envío del formulario. |
 
-El sitio utiliza **GitHub Pages** como plataforma de publicación y un dominio personalizado.
+Los eventos no incluyen nombre, correo, teléfono ni contenido del mensaje. Un clic en WhatsApp representa intención de contacto; no confirma que se haya enviado el mensaje. GA4 y Meta Pixel no están activos mientras no haya identificadores reales.
 
-Antes de realizar cambios de nombre de repositorio, dominio o configuración DNS se debe comprobar:
+## SEO y estado de revisión
 
-1. La configuración de GitHub Pages.
-2. El archivo `CNAME`, cuando corresponda.
-3. Los registros DNS del dominio.
-4. El funcionamiento mediante HTTPS después del despliegue.
+Ambas páginas tienen título, descripción, URL canónica y permiten indexación. `sitemap.xml` incluye las dos URLs. La Home ya figuraba indexada en Google Search Console; la indexación de `/paginas-web/` se solicitó el **29 de septiembre de 2026** y queda pendiente de confirmación por Google.
+
+Validaciones realizadas: revisión visual y navegación móvil, enlaces y mensajes precargados de WhatsApp, visualización del FAQ, envío exitoso del formulario con recepción del correo y visitas de ambas páginas en GoatCounter.
+
+Pendientes de revisión:
+
+- Confirmar en GoatCounter los eventos de contacto después de acciones reales.
+- Revisar los casos de error y validación del formulario.
+- Comprobar el estado del sitemap y la indexación de `/paginas-web/` en Search Console.
+- Actualizar los datos estructurados de la Home para la oferta actual.
+- Revisar la vigencia de cifras, testimonios y compromisos comerciales publicados.
 
 ## Mantenimiento
 
-El mantenimiento de los proyectos puede incluir, según el servicio contratado:
-
-- Actualización de textos e información.
-- Incorporación o sustitución de imágenes.
-- Ajustes menores de contenido y diseño.
-- Revisión de enlaces y formularios.
-- Seguimiento de integraciones existentes.
-- Mejoras evolutivas acordadas con cada cliente.
-
-Las nuevas funcionalidades o integraciones de mayor alcance se evalúan de forma independiente.
-
-## Principios del proyecto
-
-- Resolver primero la necesidad del negocio.
-- Mantener experiencias sencillas para el usuario final.
-- Diseñar principalmente para dispositivos móviles cuando el contexto lo requiere.
-- Evitar costos recurrentes innecesarios.
-- Incorporar automatización e IA cuando aporten valor medible.
-- Mantener los proyectos documentados y versionados.
-
-## Estado actual
-
-**Activo y en evolución.**
-
-SOSIALIZARTE continúa incorporando proyectos, demostraciones y casos de uso que sirven tanto como soluciones para clientes como evidencia del trabajo realizado.
-
-## Próximos pasos
-
-- Seguir fortaleciendo el portafolio con casos reales.
-- Documentar nuevas implementaciones y resultados.
-- Mejorar progresivamente la experiencia del sitio.
-- Mantener repositorios y dominios bajo una estructura consistente.
-- Incorporar automatizaciones e IA únicamente donde exista una necesidad clara.
-
----
-
-**SOSIALIZARTE · Soluciones digitales, automatización e inteligencia artificial.**
+El mantenimiento y las mejoras se acuerdan por proyecto. Pueden incluir actualización de contenido, revisión de enlaces y formularios, soporte de integraciones y nuevas secciones. Las funcionalidades de mayor alcance se evalúan por separado.
