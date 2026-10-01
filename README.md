@@ -82,3 +82,29 @@ Pendientes de revisión:
 ## Mantenimiento
 
 El mantenimiento y las mejoras se acuerdan por proyecto. Pueden incluir actualización de contenido, revisión de enlaces y formularios, soporte de integraciones y nuevas secciones. Las funcionalidades de mayor alcance se evalúan por separado.
+
+## Cuestionarios de proyecto
+
+Los cuatro cuestionarios usan `cuestionarios.js` para navegación, validación y envío:
+
+| Archivo | Uso |
+| --- | --- |
+| `cuestionario-web.html` | Página nueva: datos de contacto y necesidades del negocio. |
+| `cuestionario-rediseno.html` | Mejoras de una web existente; el chatbot es opcional. |
+| `cuestionario.html` | Expediente de implementación; preguntas frecuentes e información del asistente pueden completarse después. |
+| `cuestionario-overnet.html` | Cuestionario específico de Grupo Overnet. |
+
+### Pruebas y autollenado
+
+El botón **Auto-llenar para pruebas** está oculto en la vista normal. Para habilitarlo, agregar `?modo=pruebas` a cualquiera de las cuatro rutas. Ejemplo: `/cuestionario.html?modo=pruebas`.
+
+El autollenado utiliza datos ficticios. No envía automáticamente: hay que recorrer los pasos y pulsar Enviar. Los envíos en ese modo incluyen `modo_pruebas=si` y un asunto con `[PRUEBA]`. El parámetro controla la interfaz; no es un mecanismo de autenticación.
+
+### Avances y recepción
+
+**Guardar avance** habilita guardado local en ese navegador; **Recuperar avance** restaura campos, casillas, tratamientos y sección. Los borradores de pruebas y de clientes se guardan por separado. No se guardan archivos adjuntos. Solo se elimina el borrador automáticamente cuando Formspree confirma el envío. El cliente también puede eliminar el avance guardado sin borrar lo que está llenando.
+
+Cada solicitud lleva `tipo_cuestionario`, `id_solicitud`, `origen` y `modo_pruebas`. Esto permite organizar una futura integración; todavía no hay conexión automática de estos cuestionarios con Google Sheets.
+
+Validación del cambio del 1 de octubre de 2026: pruebas de DOM con respuestas simuladas del servidor para los cuatro cuestionarios, autollenado oculto por defecto, correo inválido, borradores, chatbot condicional, horarios libres, filas de tratamientos y prevención de doble envío. Queda pendiente confirmar recepción real en Formspree/correo, adjuntos y revisión en un iPhone físico.
+

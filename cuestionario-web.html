@@ -277,6 +277,16 @@
             .form-actions { flex-direction: column; }
             .form-actions .btn { width: 100%; justify-content: center; }
         }
+    
+        /* Los controles de prueba y pasos omitidos no aparecen en la vista normal. */
+        [hidden] { display: none !important; }
+        .draft-tools { margin: 18px 0 24px; padding: 16px; border: 1px solid var(--border); border-radius: 12px; }
+        .draft-tools p { margin: 0 0 10px; font-size: .85rem; color: var(--muted); }
+        .draft-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+        .draft-buttons button { cursor: pointer; padding: 10px 14px; border: 1px solid var(--border-strong, #C9C4BB); border-radius: 8px; background: var(--surface, #FDFCFA); color: var(--ink); font: inherit; font-size: .85rem; }
+        .draft-status { margin-top: 10px !important; }
+        .field-file:focus-visible, button:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+        @media (max-width: 640px) { .field input:not([type="checkbox"]):not([type="radio"]), .field select, .field textarea { font-size: 16px; } }
     </style>
 </head>
 <body>
@@ -296,6 +306,7 @@
         <!-- FORMULARIO -->
         <div id="formContainer">
             <div class="form-card">
+                <button type="button" class="btn btn-secondary" id="autofillBtn" hidden style="display:none;">Auto-llenar para pruebas</button>
                 <h1 class="section-title">🌐 Cuestionario para tu Web desde Cero</h1>
                 <p class="section-desc">Completa este cuestionario para que podamos construir tu página web profesional. La información que nos compartas será la base del diseño y contenido de tu sitio.</p>
 
@@ -303,11 +314,47 @@
                     ⚠️ Faltan campos obligatorios por completar en esta sección.
                 </div>
 
-                <form id="webForm" action="https://formspree.io/f/xgogjwyp" method="POST">
+                
+                <div class="draft-tools">
+                    <p>Puedes guardar tu avance en este dispositivo y continuar después. Actívalo solo si el dispositivo es tuyo.</p>
+                    <div class="draft-buttons">
+                        <button type="button" id="saveDraftBtn">Guardar avance</button>
+                        <button type="button" id="restoreDraftBtn" hidden>Recuperar avance</button>
+                        <button type="button" id="clearDraftBtn" hidden>Eliminar avance guardado</button>
+                    </div>
+                    <p id="draftStatus" class="draft-status" role="status" aria-live="polite"></p>
+                </div>
+
+                <form id="webForm" action="https://formspree.io/f/xgogjwyp" method="POST" data-questionnaire="web" novalidate>
                     <!-- ==================== SECCIÓN 1 ==================== -->
                     <div class="section-block" data-section="1">
                         <h2 class="section-title" style="font-size:1.2rem;">📋 Datos del negocio</h2>
                         <p class="section-desc" style="font-size:0.85rem;">Información básica para identificar tu negocio.</p>
+                        <div class="field">
+                            <label>Tu nombre <span class="required">*</span></label>
+                            <input type="text" name="contacto_nombre" autocomplete="name" required>
+                            <div class="field-error-msg">Escribe tu nombre.</div>
+                        </div>
+                        <div class="field">
+                            <label>¿Cómo prefieres que te contacte? <span class="required">*</span></label>
+                            <select name="medio_contacto" required>
+                                <option value="">Selecciona una opción...</option>
+                                <option value="correo">Correo electrónico</option>
+                                <option value="whatsapp">WhatsApp</option>
+                            </select>
+                            <div class="field-error-msg">Elige un medio de contacto.</div>
+                        </div>
+                        <div class="field" hidden>
+                            <label>Tu correo electrónico <span class="required">*</span></label>
+                            <input type="email" name="contacto_email" autocomplete="email" disabled>
+                            <div class="field-error-msg">Escribe un correo válido.</div>
+                        </div>
+                        <div class="field" hidden>
+                            <label>Tu WhatsApp <span class="required">*</span></label>
+                            <input type="tel" name="contacto_whatsapp" autocomplete="tel" placeholder="Ej. +52 55 1234 5678" disabled>
+                            <div class="field-error-msg">Escribe tu WhatsApp con código de país si aplica.</div>
+                        </div>
+
 
                         <div class="field">
                             <label>Nombre del negocio <span class="required">*</span></label>
@@ -340,7 +387,7 @@
                     </div>
 
                     <!-- ==================== SECCIÓN 2 ==================== -->
-                    <div class="section-block" data-section="2">
+                    <div class="section-block" data-section="2" hidden style="display:none;">
                         <h2 class="section-title" style="font-size:1.2rem;">🎨 Diseño y estilo</h2>
                         <p class="section-desc" style="font-size:0.85rem;">Ayúdanos a definir la identidad visual de tu sitio.</p>
 
@@ -349,7 +396,7 @@
                             <div class="field-file" id="logoDropzone" onclick="document.getElementById('logoInput').click()">
                                 <span class="file-icon">🖼️</span>
                                 <span class="file-label">Haz clic para subir tu logotipo</span>
-                                <input type="file" id="logoInput" name="logo" accept="image/*">
+                                <input type="file" id="logoInput" name="logo" accept="image/png,image/jpeg">
                             </div>
                             <div class="hint">Formatos: PNG o JPG. Tamaño máximo: 10 MB.</div>
                         </div>
@@ -364,7 +411,7 @@
                             <div class="field-file" id="fotosDropzone" onclick="document.getElementById('fotosInput').click()">
                                 <span class="file-icon">📷</span>
                                 <span class="file-label">Haz clic para subir fotos</span>
-                                <input type="file" id="fotosInput" name="fotos" accept="image/*" multiple>
+                                <input type="file" id="fotosInput" name="fotos" accept="image/png,image/jpeg" multiple>
                             </div>
                             <div class="hint">Puedes subir varias fotos. Tamaño máximo: 10 MB por archivo.</div>
                         </div>
@@ -376,7 +423,7 @@
                     </div>
 
                     <!-- ==================== SECCIÓN 3 ==================== -->
-                    <div class="section-block" data-section="3">
+                    <div class="section-block" data-section="3" hidden style="display:none;">
                         <h2 class="section-title" style="font-size:1.2rem;">📄 Contenido</h2>
                         <p class="section-desc" style="font-size:0.85rem;">La información que aparecerá en tu sitio web.</p>
 
@@ -399,7 +446,7 @@
                     </div>
 
                     <!-- ==================== SECCIÓN 4 ==================== -->
-                    <div class="section-block" data-section="4">
+                    <div class="section-block" data-section="4" hidden style="display:none;">
                         <h2 class="section-title" style="font-size:1.2rem;">⚙️ Funcionalidades</h2>
                         <p class="section-desc" style="font-size:0.85rem;">¿Qué quieres que haga tu página web?</p>
 
@@ -426,7 +473,7 @@
                     </div>
 
                     <!-- ==================== SECCIÓN 5 ==================== -->
-                    <div class="section-block" data-section="5">
+                    <div class="section-block" data-section="5" hidden style="display:none;">
                         <h2 class="section-title" style="font-size:1.2rem;">🎯 Objetivos y presupuesto</h2>
                         <p class="section-desc" style="font-size:0.85rem;">Ayúdanos a entender qué esperas de tu nueva página web.</p>
 
@@ -439,6 +486,7 @@
                                 <option value="Informacion">Tener un lugar profesional con información de contacto</option>
                                 <option value="Citas">Facilitar que los clientes agenden citas</option>
                                 <option value="Portafolio">Mostrar mi portafolio o trabajos</option>
+                            <option value="Necesito orientación">No sé, necesito orientación</option>
                             </select>
                             <div class="field-error-msg">Selecciona una opción.</div>
                         </div>
@@ -451,6 +499,7 @@
                                 <option value="3,000 a 5,000">$3,000 - $5,000 MXN</option>
                                 <option value="5,000 a 8,000">$5,000 - $8,000 MXN</option>
                                 <option value="Mas de 8,000">Más de $8,000 MXN</option>
+                            <option value="Necesito orientación">No sé, necesito orientación</option>
                             </select>
                         </div>
 
@@ -461,6 +510,7 @@
                     </div>
 
                     <!-- ─── BOTONES ─── -->
+                    <p class="hint" style="margin-top:16px;">Usaremos tus respuestas para revisar tu proyecto y contactarte. <a href="/privacidad">Aviso de privacidad</a></p>
                     <div class="form-actions">
                         <button type="button" class="btn btn-secondary" id="prevBtn" style="visibility:hidden;">
                             <i class="fas fa-arrow-left"></i> Anterior
@@ -482,7 +532,8 @@
             <div class="icon">🎉</div>
             <h2>¡Cuestionario enviado!</h2>
             <p>Hemos recibido tu información. En las próximas 24 horas revisaremos tus respuestas y te contactaremos para comenzar a planear tu sitio web.</p>
-            <a href="/" class="btn btn-primary">Volver al sitio</a>
+            <a href="https://wa.me/525540509093?text=Hola%2C%20acabo%20de%20completar%20el%20cuestionario%20y%20quiero%20compartir%20materiales%20de%20mi%20proyecto." class="btn btn-primary" target="_blank" rel="noopener noreferrer">Compartir materiales por WhatsApp</a>
+            <p style="margin-top:16px;"><a href="/">Volver al sitio</a></p>
         </div>
 
         <!-- ─── FOOTER ─── -->
@@ -494,148 +545,7 @@
         </div>
     </div>
 
-    <script>
-        const MAX_FILE_MB = 10;
-        const MAX_FILE_BYTES = MAX_FILE_MB * 1024 * 1024;
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = Array.from(document.querySelectorAll('.section-block'));
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const submitBtn = document.getElementById('submitBtn');
-            const progressFill = document.getElementById('progressFill');
-            const progressLabel = document.getElementById('progressLabel');
-            const sectionErrorBanner = document.getElementById('sectionErrorBanner');
-            let currentSection = 0;
-
-            function showSection(index) {
-                sections.forEach((section, i) => {
-                    section.style.display = (i === index) ? 'block' : 'none';
-                });
-                const progress = ((index + 1) / sections.length) * 100;
-                progressFill.style.width = progress + '%';
-                progressLabel.textContent = `Sección ${index + 1} de ${sections.length}`;
-                sectionErrorBanner.classList.remove('visible');
-
-                prevBtn.style.visibility = index === 0 ? 'hidden' : 'visible';
-                if (index === sections.length - 1) {
-                    nextBtn.style.display = 'none';
-                    submitBtn.style.display = 'inline-flex';
-                } else {
-                    nextBtn.style.display = 'inline-flex';
-                    submitBtn.style.display = 'none';
-                }
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            // ─── VALIDACIÓN DE LA SECCIÓN ACTUAL ───
-            function validateSection(index) {
-                const section = sections[index];
-                let valid = true;
-                let firstInvalidEl = null;
-
-                section.querySelectorAll('input[required], textarea[required], select[required]').forEach(el => {
-                    const field = el.closest('.field');
-                    if (!el.value.trim()) {
-                        valid = false;
-                        field.classList.add('field-invalid');
-                        if (!firstInvalidEl) firstInvalidEl = el;
-                    } else {
-                        field.classList.remove('field-invalid');
-                    }
-                });
-
-                if (!valid) {
-                    sectionErrorBanner.classList.add('visible');
-                    if (firstInvalidEl) {
-                        firstInvalidEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                } else {
-                    sectionErrorBanner.classList.remove('visible');
-                }
-
-                return valid;
-            }
-
-            showSection(0);
-
-            nextBtn.addEventListener('click', function() {
-                if (!validateSection(currentSection)) return;
-                if (currentSection < sections.length - 1) {
-                    currentSection++;
-                    showSection(currentSection);
-                }
-            });
-
-            prevBtn.addEventListener('click', function() {
-                if (currentSection > 0) {
-                    currentSection--;
-                    showSection(currentSection);
-                }
-            });
-
-            // ─── ENVÍO DEL FORMULARIO ───
-            const form = document.getElementById('webForm');
-            const formContainer = document.getElementById('formContainer');
-            const formSuccess = document.getElementById('formSuccess');
-
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault();
-
-                if (!validateSection(currentSection)) return;
-
-                const submitBtnEl = document.getElementById('submitBtn');
-                submitBtnEl.disabled = true;
-                submitBtnEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-
-                try {
-                    const formData = new FormData(form);
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: { 'Accept': 'application/json' }
-                    });
-
-                    if (response.ok) {
-                        formContainer.style.display = 'none';
-                        formSuccess.classList.add('visible');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    } else {
-                        throw new Error('Error en el envío');
-                    }
-                } catch (error) {
-                    alert('Hubo un error al enviar el formulario. Por favor intenta de nuevo o contáctanos por WhatsApp.');
-                    submitBtnEl.disabled = false;
-                    submitBtnEl.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar cuestionario';
-                }
-            });
-
-            // ─── SUBIDA DE ARCHIVOS CON VALIDACIÓN DE TAMAÑO ───
-            document.querySelectorAll('.field-file input[type="file"]').forEach(input => {
-                input.addEventListener('change', function() {
-                    const dropzone = this.closest('.field-file');
-                    const label = dropzone.querySelector('.file-label');
-
-                    if (this.files.length === 0) {
-                        label.textContent = 'Haz clic para subir archivo';
-                        dropzone.classList.remove('file-error');
-                        return;
-                    }
-
-                    const tooLarge = Array.from(this.files).filter(f => f.size > MAX_FILE_BYTES);
-
-                    if (tooLarge.length > 0) {
-                        dropzone.classList.add('file-error');
-                        label.textContent = `⚠️ ${tooLarge[0].name} pesa más de ${MAX_FILE_MB} MB. Sube un archivo más ligero.`;
-                        this.value = '';
-                        return;
-                    }
-
-                    dropzone.classList.remove('file-error');
-                    label.textContent = `✅ ${this.files.length} archivo(s) seleccionado(s)`;
-                });
-            });
-        });
-    </script>
+    <script src="/cuestionarios.js?v=20261001" defer></script>
 </body>
 </html>
+
