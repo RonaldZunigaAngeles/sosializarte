@@ -63,6 +63,28 @@ const templates = {
       ["bot","Podemos registrar tu solicitud; la disponibilidad se confirmaría al consultar el sistema del restaurante."]
     ]
   },
+  taller:{
+    label:"Taller automotriz · Solicitud de servicio",
+    title:"Recibir cada cita con los datos del vehículo desde el primer mensaje.",
+    intro:"Una solicitud de cita más completa puede ahorrar aclaraciones y preparar la recepción del vehículo.",
+    chat:[
+      ["client","Hola, quiero agendar un servicio para mi auto."],
+      ["bot","Con gusto. ¿Qué marca, modelo y año tiene tu vehículo?"],
+      ["client","Es un Nissan Versa 2019. Quiero revisar los frenos."],
+      ["bot","Perfecto. Podemos registrar el problema y tu horario preferido para que el taller confirme la disponibilidad."]
+    ]
+  },
+  plomeria:{
+    label:"Electricidad y plomería · Cotización guiada",
+    title:"Solicitudes de servicio más claras desde el primer contacto.",
+    intro:"Identificar tipo de trabajo, zona y tipo de inmueble antes de cotizar agiliza la primera respuesta.",
+    chat:[
+      ["client","Hola, necesito que revisen una fuga de agua."],
+      ["bot","Claro. ¿En qué colonia y tipo de inmueble se necesita el servicio?"],
+      ["client","En Coapa, en un departamento."],
+      ["bot","Gracias. La idea es organizar estos datos para que el equipo valore el servicio y te contacte."]
+    ]
+  },
   generico:{
     label:"Negocios · Atención de prospectos",
     title:"Responder con más claridad y dar seguimiento a cada solicitud.",
@@ -77,6 +99,8 @@ const templates = {
 };
 const giroMap = (giro) => {
   const g=normalize(giro);
+  if(g.includes("taller")||g.includes("automotriz")||g.includes("mecanico")) return "taller";
+  if(g.includes("plomer")||g.includes("electric")) return "plomeria";
   if(g.includes("inmobil")||g.includes("bien_raiz")) return "inmobiliaria";
   if(g.includes("consul")||g.includes("clinic")||g.includes("medic")||g.includes("odont")||g.includes("dental")) return "consultorio";
   if(g.includes("restaur")||g.includes("alimento")||g.includes("cafe")||g.includes("gastron")) return "restaurante";
