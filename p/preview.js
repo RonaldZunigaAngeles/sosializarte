@@ -85,6 +85,50 @@ const templates = {
       ["bot","Gracias. La idea es organizar estos datos para que el equipo valore el servicio y te contacte."]
     ]
   },
+  autodiagnostico:{
+    label:"Diagnóstico automotriz · Citas y servicios",
+    title:"Cada consulta, con los datos del auto y el servicio que necesita.",
+    intro:"Una recepción guiada puede distinguir programación de llaves, módulos y servicios eléctricos antes de que el taller responda.",
+    chat:[
+      ["client","Buenas tardes, necesito programar una llave de mi automóvil."],
+      ["bot","Claro. ¿Qué marca, modelo y año tiene el vehículo?"],
+      ["client","Chevrolet Aveo 2018. Estoy en Coyoacán."],
+      ["bot","Podemos registrar tu solicitud y datos de contacto para que el taller confirme la atención."]
+    ]
+  },
+  veterinaria:{
+    label:"Clínica veterinaria · Solicitudes por especie",
+    title:"Atención organizada desde el primer mensaje, para cada tipo de mascota.",
+    intro:"Una conversación guiada puede identificar especie, servicio y fecha deseada sin simular diagnósticos ni confirmar citas inexistentes.",
+    chat:[
+      ["client","Hola, quisiera solicitar una cita para mi conejo."],
+      ["bot","Con gusto. ¿Buscas consulta veterinaria u otro servicio?"],
+      ["client","Una consulta y orientación sobre los horarios."],
+      ["bot","Podemos registrar la especie, el motivo general y el horario preferido para que la clínica confirme disponibilidad."]
+    ]
+  },
+  eventos:{
+    label:"Salones y eventos · Solicitud de cotización",
+    title:"Cotizaciones de eventos con el contexto necesario desde el inicio.",
+    intro:"Identificar tipo de celebración, salón de interés, fecha e invitados ayuda a orientar cada solicitud comercial.",
+    chat:[
+      ["client","Hola, estoy organizando unos XV años."],
+      ["bot","¡Con gusto! ¿Tienes una fecha y cuántos invitados contemplas?"],
+      ["client","Para marzo, alrededor de 120 invitados."],
+      ["bot","Podemos registrar el evento, el salón de interés y tu medio de contacto para solicitar una cotización."]
+    ]
+  },
+  arquitectura:{
+    label:"Arquitectura · Citas de proyecto",
+    title:"Cada cita con información útil del proyecto desde el primer contacto.",
+    intro:"Una entrada guiada puede clasificar tipo de proyecto, ubicación y etapa antes de confirmar una asesoría.",
+    chat:[
+      ["client","Hola, busco ayuda para remodelar un departamento."],
+      ["bot","Claro. ¿En qué zona se encuentra y en qué etapa está el proyecto?"],
+      ["client","En Tlalpan, apenas estamos planeando."],
+      ["bot","Podemos registrar esos datos y solicitar un horario para que el estudio confirme la cita."]
+    ]
+  },
   generico:{
     label:"Negocios · Atención de prospectos",
     title:"Responder con más claridad y dar seguimiento a cada solicitud.",
@@ -99,6 +143,10 @@ const templates = {
 };
 const giroMap = (giro) => {
   const g=normalize(giro);
+  if(g.includes("veterin")) return "veterinaria";
+  if(g.includes("evento")||g.includes("banquete")||g.includes("salon")) return "eventos";
+  if(g.includes("arquitect")||g.includes("interiorismo")) return "arquitectura";
+  if(g.includes("diagnostico")&&g.includes("automotriz")) return "autodiagnostico";
   if(g.includes("taller")||g.includes("automotriz")||g.includes("mecanico")) return "taller";
   if(g.includes("plomer")||g.includes("electric")) return "plomeria";
   if(g.includes("inmobil")||g.includes("bien_raiz")) return "inmobiliaria";
