@@ -13,7 +13,7 @@ const templates = {
     title:"Convertir cada consulta en una oportunidad que pueda atenderse.",
     intro:"Así podría capturarse la intención de compra o renta y canalizarse al asesor adecuado.",
     chat:[
-      ["client","Hola, ¿tienen departamentos en Coyoacán?"],
+      ["client","Hola, busco opciones de departamentos por la zona sur de CDMX."],
       ["bot","¡Hola! Podemos ayudarte a registrar tu búsqueda. ¿Quieres comprar o rentar?"],
       ["client","Comprar, con presupuesto de 3 a 4 millones."],
       ["bot","Perfecto. La idea es organizar tu solicitud y enviarla a un asesor para dar seguimiento."]
@@ -26,7 +26,7 @@ const templates = {
     chat:[
       ["client","Buenas tardes, quisiera agendar una consulta."],
       ["bot","Con gusto. ¿Qué especialidad necesitas?"],
-      ["client","Dermatología. ¿Hay horarios esta semana?"],
+      ["client","Una valoración. ¿Hay horarios esta semana?"],
       ["bot","Podemos registrar tu solicitud y, con una agenda integrada, consultar horarios disponibles."]
     ]
   },
@@ -35,9 +35,9 @@ const templates = {
     title:"Recibir solicitudes mejor documentadas desde el primer mensaje.",
     intro:"Organizar equipo, falla, ubicación y horario evita pedir los mismos datos varias veces.",
     chat:[
-      ["client","Mi aire acondicionado dejó de enfriar. ¿Lo pueden revisar?"],
-      ["bot","Con gusto. ¿Qué marca y modelo es, y en qué zona se encuentra?"],
-      ["client","Es un Minisplit, estoy en Tlalpan."],
+      ["client","Hola, necesito servicio para mi sistema de climatización."],
+      ["bot","Con gusto. ¿Qué tipo de sistema es y en qué zona se encuentra?"],
+      ["client","Es un equipo de calefacción y estoy en Tlalpan."],
       ["bot","Gracias. Podemos registrar los datos para que el equipo evalúe el servicio y te contacte."]
     ]
   },
@@ -117,7 +117,7 @@ function render(row, demo=false) {
   const company=clean(row.empresa,100);
   const key=giroMap(row.giro);
   const t=templates[key];
-  if(!company||!clean(row.hallazgo_titulo))return showError("El contenido de esta propuesta todavía no ha sido validado.");
+  if(!company||!clean(row.hallazgo_titulo)||!clean(row.antes_1)||!clean(row.despues_1))return showError("El contenido de esta propuesta todavía no ha sido validado.");
   $("notice").textContent=(demo?"DEMOSTRACIÓN FICTICIA. ":"")+"Propuesta conceptual elaborada por SOSIALIZARTE para "+company+". No es un sitio oficial ni un servicio conectado al negocio.";
   if(demo)$("notice").classList.add("demo");
   $("empresa-eyebrow").textContent=company;
